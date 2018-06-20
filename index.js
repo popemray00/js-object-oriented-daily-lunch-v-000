@@ -99,10 +99,22 @@ class Delivery {
 
     store.deliveries.push(this)
   }
+  
+  meal(){
+    return store.meals.find(meal => {
+      return meal.id === this.mealId
+    })
+  }
+
+  customer(){
+    return store.customers.find(customer => {
+      return customer.id === this.customerId
+    })
+  }
 
   neighborhood(){
-    return store.neighborhoods.map(neighborhood => {
-      return ghborhood()
+    return store.neighborhoods.find(neighborhood => {
+      return neighborhood.id === this.neighborhoodId
     })
   }
 }
