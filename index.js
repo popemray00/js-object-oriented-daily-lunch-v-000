@@ -12,25 +12,26 @@ class Neighborhood {
 
     store.neighborhoods.push(this)
   }
-  deliveries(){
-   return store.deliveries.filter(delivery => {
-     return delivery.neighborhoodId === this.id
-  })
-}
 
- customers(){
-   return store.customers.filter(customer => {
-     return customer.neighborhoodId === this.id
-   })
- }
-
- meals(){
-    let all = this.deliveries().map(delivery => {
-      return delivery.meal()
+    deliveries(){
+     return store.deliveries.filter(delivery => {
+       return delivery.neighborhoodId === this.id
     })
-    let uniqueMeals = [...new Set(all)]
-    return uniqueMeals
-}
+  }
+
+   customers(){
+     return store.customers.filter(customer => {
+       return customer.neighborhoodId === this.id
+     })
+   }
+
+   meals(){
+      let all = this.deliveries().map(delivery => {
+        return delivery.meal()
+      })
+      let uniqueMeals = [...new Set(all)]
+      return uniqueMeals
+  }
 }
 
 class Customer {
