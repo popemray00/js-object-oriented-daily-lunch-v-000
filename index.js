@@ -43,6 +43,25 @@ class Customer {
     store.customers.push(this)
 
   }
+
+  deliveries(){
+   return store.deliveries.filter(delivery => {
+     return delivery.customerId === this.id
+   })
+ }
+
+ meals() {
+   return this.deliveries().map(delivery => {
+     return delivery.meal()
+   })
+ }
+
+ totalSpent() {
+   let total = 0
+   return this.meals().reduce((sum, meal) => {
+     return sum + meal.price
+   }, 0 )
+ }
 }
 
 class Meal {
