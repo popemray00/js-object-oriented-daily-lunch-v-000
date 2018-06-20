@@ -50,6 +50,11 @@ class Delivery {
     this.customerId = customerId - 1
 
     store.deliveries.push(this)
+  }
 
+  neighborhood(){
+    return store.neighborhoods.find(neighborhood => {
+      return neighborhood.id === this.neighborhoodId
+    })
   }
 }
