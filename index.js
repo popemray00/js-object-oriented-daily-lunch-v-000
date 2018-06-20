@@ -14,7 +14,7 @@ class Neighborhood {
   }
 
   deliveries(){
-    return store.deliveries.map(delivery => {
+    return store.deliveries().map(delivery => {
       return delivery.neighborhood()
     })
   }
@@ -54,7 +54,7 @@ class Delivery {
 
   neighborhood(){
     return store.neighborhoods.map(neighborhood => {
-      return delivery.neighborhood()
+      return ghborhood()
     })
   }
 }
