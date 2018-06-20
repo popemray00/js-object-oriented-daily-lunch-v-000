@@ -73,6 +73,21 @@ class Meal {
     store.meals.push(this)
 
   }
+  deliveries(){
+    return store.deliveries.filter(delivery => {
+      return delivery.mealId === this.id
+    })
+  }
+
+  customers(){
+    return store.customers.filter(customer => {
+      return customer.meals().includes(this)
+    })
+  }
+
+  static byPrice(){
+    return store.meals.sort(function(a, b) {return a.price < b.price})
+  }
 }
 
 class Delivery {
