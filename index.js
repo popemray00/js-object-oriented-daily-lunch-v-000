@@ -10,5 +10,7 @@ class Neighborhood {
     this.id = ++neighborhoodId
     this.name = name
 
+    store.neighborhoods.push(this)
+
   }
 }
