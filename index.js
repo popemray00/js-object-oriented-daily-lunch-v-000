@@ -53,7 +53,7 @@ class Delivery {
   }
 
   neighborhood(){
-    return store.neighborhoods.find(neighborhood => {
+    return store.neighborhoods.map(neighborhood => {
       return neighborhood.delivery()
     })
   }
