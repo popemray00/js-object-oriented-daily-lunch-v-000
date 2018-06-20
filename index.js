@@ -38,7 +38,7 @@ class Customer {
   constructor(name, neighborhood) {
     this.id = ++customerId
     this.name = name
-    this.neighborhoodId = neighborhoodId - 1
+    this.neighborhoodId = neighborhoodId
 
     store.customers.push(this)
 
@@ -93,13 +93,13 @@ class Meal {
 class Delivery {
   constructor(meal, neighborhood, customer) {
     this.id = ++deliveryId
-    this.mealId = mealId - 1
-    this.neighborhoodId = neighborhoodId - 1
-    this.customerId = customerId - 1
+    this.mealId = mealId 
+    this.neighborhoodId = neighborhoodId
+    this.customerId = customerId
 
     store.deliveries.push(this)
   }
-  
+
   meal(){
     return store.meals.find(meal => {
       return meal.id === this.mealId
